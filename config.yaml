@@ -1,0 +1,55 @@
+
+# BIDS directory containing events.tsv files
+BIDS_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/bids"
+
+# Directory containing example design.fsf file
+FEAT_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/FEAT3"
+
+# Directory containing output fmriprep directory
+FMRIPREP_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/fmriprep_1.3.2"
+
+# Directory for confounder output report and figures
+CONFOUNDER_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output_snakemake"
+
+# Location of participants.tsv file
+participants_tsv: "/Users/switt/Documents/ComputationalCore/NoleControl/bids/participants.tsv"
+
+# Parameters for grabbing correct files from FMRIPREP_DIR
+fmriprep_params:
+    datatype: bold
+    space: MNI152NLin2009cAsym
+    desc: preproc
+    task: rest
+    num_runs: 5
+
+# Fixed parameters of bold scans
+sequence_params:
+    TR: 2.5
+    bold_reps: 84
+
+# Fixed task parameters
+task_params:
+    trial_names: ['object','button']
+
+# Mask file for limiting search area (will throw error if mask file and func file are not in same space and spatial resolution)
+#MASK_FILE: "/path/to/mask_file.nii.gz"
+
+# Dictionary of confounds fron fMRIPrep confounds.tsv file.  Editable; keys are user-defined, values are column labels from confounds.tsv file.
+CONFOUNDS:
+  sixMotion: ['trans_x','trans_y','trans_z','rot_x','rot_y','rot_z']
+  sixMotion-aCompCor00: ['trans_x','trans_y','trans_z','rot_x','rot_y','rot_z','a_comp_cor_00']
+  sixMotion-tCompCor00: ['trans_x','trans_y','trans_z','rot_x','rot_y','rot_z','t_comp_cor_00']
+  sixMotion-csf-wm: ['trans_x','trans_y','trans_z','rot_x','rot_y','rot_z','csf','white_matter']
+  dvars: ['dvars']
+  dvars-aCompCor00: ['dvars','a_comp_cor_00']
+  dvars-tCompCor00: ['dvars','t_comp_cor_00']
+  dvars-csf-wm: ['dvars','csf','white_matter']
+  framewiseDisplacement: ['framewise_displacement']
+  framewiseDisplacement-aCompCor00: ['framewise_displacement','a_comp_cor_00']
+  framewiseDisplacement-tCompCor00: ['framewise_displacement','t_comp_cor_00']
+  framewiseDisplacement-csf-wm: ['framewise_displacement','csf','white_matter']
+
+
+# Specify a contrast vector.  Optional.  If not specified, the effects-of-interest F-contrast will be used.
+#CONTRAST: '1, -1, 0, 0'
+

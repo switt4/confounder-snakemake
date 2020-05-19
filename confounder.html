@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>confounder App Results</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="css/crocodoyle.css"></link>
+<link href="favicon.ico" rel="icon" type="image/x-icon" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">confounder</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#rsquare">R-square results</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#run01">run-01</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#run02">run-02</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#run03">run-03</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#run04">run-04</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#run05">run-05</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+	<hr>
+	<h2 class="text-center">R-square results</h2>
+	<hr>  	
+	<div class="row">
+		<div class="col-sm-12" id="rsquare">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_region-23_RSquare.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+</div>  
+
+<div class="container-fluid">
+	<hr>
+	<h2 class="text-center">run-01</h2>
+	<hr>
+	<h4 class="text-center">Confounds vs. BOLD signal</h4>
+	<p> These plots show the relationship between the individual confounds tested and the predicted BOLD signal.  A strong relationship between any confound and the predicted BOLD signal may suggest this run should be explored further and potentially discarded.</p>  	
+	<div class="row">
+		<div class="col-sm-12" id="run01">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-sixMotion_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-dvars_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-framewiseDisplacement_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-aCompCor00_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-tCompCor00_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-csf_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-wm_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+	<h4 class="text-center">Predicted BOLD signal</h4>
+	<p> Plot of the predicted BOLD signal for each task regressor included in the model.</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+	<h4 class="text-center">Confounds</h4>
+	<p> Plots of confound signals for each confound tested.</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-sixMotion.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-dvars.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-framewiseDisplacement.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-aCompCor00.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-tCompCor00.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-csf.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-01_confound-wm.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+</div>  
+
+<div class="container-fluid">
+	<hr>
+	<h2 class="text-center">run-02</h2>
+	<hr>
+	<h4 class="text-center">Confounds vs. BOLD signal</h4>
+	<p> These plots show the relationship between the individual confounds tested and the predicted BOLD signal.  A strong relationship between any confound and the predicted BOLD signal may suggest this run should be explored further and potentially discarded.</p>    	
+	<div class="row">
+		<div class="col-sm-12" id="run02">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-sixMotion_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-dvars_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-framewiseDisplacement_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-aCompCor00_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-tCompCor00_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-csf_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-wm_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+	<h4 class="text-center">Predicted BOLD signal</h4>
+	<p> Plot of the predicted BOLD signal for each task regressor included in the model.</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+	<h4 class="text-center">Confounds</h4>
+	<p> Plots of confound signals for each confound tested.</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-sixMotion.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-dvars.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-framewiseDisplacement.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-aCompCor00.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-tCompCor00.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-csf.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-02_confound-wm.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+</div> 
+
+<div class="container-fluid">
+	<hr>
+	<h2 class="text-center">run-03</h2>
+	<hr>  
+	<h4 class="text-center">Confounds vs. BOLD signal</h4>
+	<p> These plots show the relationship between the individual confounds tested and the predicted BOLD signal.  A strong relationship between any confound and the predicted BOLD signal may suggest this run should be explored further and potentially discarded.</p>  	
+	<div class="row">
+		<div class="col-sm-12" id="run03">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-sixMotion_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-dvars_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-framewiseDisplacement_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-aCompCor00_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-tCompCor00_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-csf_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-wm_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+	<h4 class="text-center">Predicted BOLD signal</h4>
+	<p> Plot of the predicted BOLD signal for each task regressor included in the model.</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+	<h4 class="text-center">Confounds</h4>
+	<p> Plots of confound signals for each confound tested.</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-sixMotion.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-dvars.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-framewiseDisplacement.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-aCompCor00.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-tCompCor00.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-csf.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-03_confound-wm.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+</div>   
+
+<div class="container-fluid">
+	<hr>
+	<h2 class="text-center">run-04</h2>
+	<hr> 
+	<h4 class="text-center">Confounds vs. BOLD signal</h4>
+	<p> These plots show the relationship between the individual confounds tested and the predicted BOLD signal.  A strong relationship between any confound and the predicted BOLD signal may suggest this run should be explored further and potentially discarded.</p>   	
+	<div class="row">
+		<div class="col-sm-12" id="run04">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-sixMotion_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-dvars_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-framewiseDisplacement_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-aCompCor00_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-tCompCor00_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-csf_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-wm_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+	<h4 class="text-center">Predicted BOLD signal</h4>
+	<p> Plot of the predicted BOLD signal for each task regressor included in the model.</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+	<h4 class="text-center">Confounds</h4>
+	<p> Plots of confound signals for each confound tested.</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-sixMotion.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-dvars.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-framewiseDisplacement.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-aCompCor00.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-tCompCor00.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-csf.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-04_confound-wm.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+</div>  
+
+<div class="container-fluid">
+	<hr>
+	<h2 class="text-center">run-05</h2>
+	<hr>  
+	<h4 class="text-center">Confounds vs. BOLD signal</h4>
+	<p> These plots show the relationship between the individual confounds tested and the predicted BOLD signal.  A strong relationship between any confound and the predicted BOLD signal may suggest this run should be explored further and potentially discarded.</p>  	
+	<div class="row">
+		<div class="col-sm-12" id="run05">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-sixMotion_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-dvars_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-framewiseDisplacement_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-aCompCor00_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-tCompCor00_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-csf_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-wm_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+	<h4 class="text-center">Predicted BOLD signal</h4>
+	<p> Plot of the predicted BOLD signal for each task regressor included in the model.</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_boldSignal.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+	<h4 class="text-center">Confounds</h4>
+	<p> Plots of confound signals for each confound tested.</p>
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-sixMotion.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-dvars.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-framewiseDisplacement.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-aCompCor00.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-tCompCor00.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-csf.svg" max-width="100%" height="auto" class=".img-fluid">
+			<img src="/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output3/sub-CT02/figures/sub-CT02_task-rest_run-05_confound-wm.svg" max-width="100%" height="auto" class=".img-fluid">
+		</div>
+	</div>
+</div> 
+
+</body>
+</html>
+
