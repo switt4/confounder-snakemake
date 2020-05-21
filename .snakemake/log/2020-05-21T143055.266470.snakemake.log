@@ -1,0 +1,3 @@
+WorkflowError in line 53 of /Users/switt/Documents/GitHub/confounder-snakemake/Snakefile:
+Failed to open /Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.
+  File "/Users/switt/Documents/GitHub/confounder-snakemake/Snakefile", line 53, in <module>

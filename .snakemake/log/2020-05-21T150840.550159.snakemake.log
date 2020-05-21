@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 1 of /Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk:
+Missing input files for rule create_custom_events:
+/Users/switt/Documents/ComputationalCore/NoleControl/bids/sub-CT01/func/sub-CT01_task-rest_run-01_events.tsv

@@ -1,0 +1,3 @@
+Building DAG of jobs...
+CyclicGraphException in line 35 of /Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk:
+Cyclic dependency on rule estimate_fsl_design.

@@ -12,8 +12,12 @@ feat_subdir = os.path.split(snakemake.output.output_design_fsf)[0]
 # load in design.fsf
 design = FA.loadSettings(snakemake.input.feat_dir)
 
-custom = [('custom%d'%evTemp,'"%s"'%snakemake.input.event_file)]
-design.update(custom)
+for ev in range(len(snakemake.input.event_files)):
+    evTemp = ev + 1
+    evName = design['evtitle%d'%evTemp]
+    evFile = [evf for evf in snakemake.input.event_files if evf == 'trial-%s_onsets.txt'%evName]
+    custom = [('custom%d'%evTemp,'"%s"'%evFile)]
+    design.update(custom)
 
 # begin tedious process of rebuilding design.fsf 
 feat_files = [('feat_files(1)','"%s"'%snakemake.input.func_file)]
@@ -54,19 +58,26 @@ init_standard = [('init_standard','""')]
 design.update(init_standard)
 
 # if confound_name is 'none' skip step to add confound_file
-if snakemake.params.confound_name == 'none':
-    continue
+if snakemake.params.confound_name == 'noconfounds':
+    trial = []
+    for key,value in design.items():
+	    trial.append("set fmri({}) {}".format(key,value))
+	    trial = [sub.replace('set fmri(feat_files(1))','set feat_files(1)') for sub in trial]
+
+    with open(args.output_design_fsf, 'w') as f:
+	    for item in trial:
+	    f.write("%s\n" % item)
 else:
     confoundevs = [('confoundevs',1)]
     design.update(confoundevs)
     confoundev_files = [('confoundev_files(1)','"%s"'%snakemake.input.confound_file)]
     design.update(confoundev_files)
+    
+    trial = []
+    for key,value in design.items():
+	    trial.append("set fmri({}) {}".format(key,value))
+	    trial = [sub.replace('set fmri(feat_files(1))','set feat_files(1)') for sub in trial]
 
-trial = []
-for key,value in design.items():
-	trial.append("set fmri({}) {}".format(key,value))
-	trial = [sub.replace('set fmri(feat_files(1))','set feat_files(1)') for sub in trial]
-
-with open(args.output_design_fsf, 'w') as f:
-	for item in trial:
-	f.write("%s\n" % item)
+    with open(args.output_design_fsf, 'w') as f:
+	    for item in trial:
+	    f.write("%s\n" % item)

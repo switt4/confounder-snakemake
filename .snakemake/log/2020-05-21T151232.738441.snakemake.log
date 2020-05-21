@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 20 of /Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk:
+Missing input files for rule create_fsl_design:
+/Users/switt/Documents/ComputationalCore/NoleControl/fmriprep_1.3.2/fmriprep/sub-CT02/func/sub-CT02-task-rest_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz

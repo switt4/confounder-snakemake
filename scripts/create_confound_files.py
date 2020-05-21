@@ -2,7 +2,6 @@ import os
 import json
 import pandas as pd
 import numpy as np
-import logging
 
 def read_tsv(inTSV):
 	dataTSV = pd.read_table(inTSV)
@@ -13,10 +12,6 @@ def read_json(inJSON):
 	with open(inJSON,'rt') as cj:
 		dataJSON = json.load(cj)
 	return dataJSON
-
-logging.basicConfig(filename=snakemake.log.logfile,filemode='w',format='%(name)s - %(levelname)s - %(message)s',level=logging.INFO)
-
-logging.info('Test logging message')
 
 # Create empty confound_file for case of no experimental confounds
 if (snakemake.params.confound_name == 'noconfounds'):

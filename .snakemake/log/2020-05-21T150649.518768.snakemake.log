@@ -1,0 +1,4 @@
+WildcardError in line 24 of /Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk:
+No values given for wildcard 'subj_sess_dir'.
+  File "/Users/switt/Documents/GitHub/confounder-snakemake/Snakefile", line 53, in <module>
+  File "/Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk", line 24, in <module>

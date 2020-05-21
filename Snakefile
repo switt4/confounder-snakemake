@@ -14,10 +14,13 @@ bids_dir = config['BIDS_DIR']
 feat_dir = config['FEAT_DIR']
 fmriprep_dir = join(config['FMRIPREP_DIR'],'fmriprep')
 confounder_dir = config['CONFOUNDER_DIR']
-task = config['fmriprep_params']['task']
+
+# pull confounds dictionary from config file and save
+# create list of confound grouping names and prepend
+# with "noconfounds" to account for testing GLM with
+# no experimental confounds
 confounds = config['CONFOUNDS']
 confound_names = list(confounds.keys())
-
 confound_names.insert(0,'noconfounds')
 
 # save out config file CONFOUNDS dictionary as json file
@@ -37,6 +40,7 @@ sessions = layout.get_sessions(**fmriprep_params)
 runs = layout.get_runs(**fmriprep_params)
 
 # get task parameters
+task = config['fmriprep_params']['task']
 trial_names = config['task_params']['trial_names']
 
 # create strings including wildcards for subj_sess_dir and subj_sess_prefix
@@ -48,17 +52,6 @@ else:
     subj_sess_prefix = 'sub-{subject}'
 
 rule all:
-    input: expand(join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.mat'),subject=subjects,confound_name=confound_names,run=runs,allow_missing='True')
-    #input: expand(join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','trial-{trial_name}_onsets.txt'),subject=subjects,confound_name=confound_names,run=runs,trial_name=trial_names,allow_missing=true)
+    input: expand(join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.mat'),subject=subjects,confound_name=confound_names,run=runs,allow_missing=True)
 
-rule create_confound_file:
-	input:
-		confounds_tsv = join(fmriprep_dir,subj_sess_dir,'func',f'{subj_sess_prefix}_task-{{task}}_run-{{run}}_desc-confounds_regressors.tsv'),
-		confounds_dictionary = join(confounder_dir,'confounds_dictionary.json')
-	params:
-		confound_name = '{confound_name}'
-	log:
-		logfile = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','confounds-{confound_name}.log')
-	output:
-		confound_file = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','confounds-{confound_name}.txt')
-	script: 'scripts/create_confound_files.py'
+include: 'rules/fsl_design.smk'

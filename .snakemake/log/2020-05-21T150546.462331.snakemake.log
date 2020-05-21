@@ -1,0 +1,6 @@
+TypeError in line 24 of /Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk:
+join() argument must be str or bytes, not 'set'
+  File "/Users/switt/Documents/GitHub/confounder-snakemake/Snakefile", line 53, in <module>
+  File "/Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk", line 24, in <module>
+  File "/Users/switt/anaconda3/envs/snakemake-tutorial/lib/python3.6/posixpath.py", line 94, in join
+  File "/Users/switt/anaconda3/envs/snakemake-tutorial/lib/python3.6/genericpath.py", line 149, in _check_arg_types

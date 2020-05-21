@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 22 of /Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk:
+Wildcards in input files cannot be determined from output files:
+'trial_name'
