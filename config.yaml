@@ -28,6 +28,7 @@ sequence_params:
     bold_reps: 84
 
 # Fixed task parameters
+# Enter trial_names in order in which they appear in example design.fsf in FEAT_DIR
 task_params:
     trial_names: ['object','button']
 

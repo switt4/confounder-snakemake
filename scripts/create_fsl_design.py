@@ -5,7 +5,7 @@ import fsl.data.featanalysis as FA
 FSLDIR = os.path.expandvars('$FSLDIR')
 
 # get path of output design.fsf file
-feat_subdir = os.path.split(snakemake.output.output_design_fsf)[0]
+feat_subdir = os.path.split(snakemake.output.design_fsf)[0]
 
 # set variables
 
@@ -15,7 +15,8 @@ design = FA.loadSettings(snakemake.input.feat_dir)
 for ev in range(len(snakemake.input.event_files)):
     evTemp = ev + 1
     evName = design['evtitle%d'%evTemp]
-    evFile = [evf for evf in snakemake.input.event_files if evf == 'trial-%s_onsets.txt'%evName]
+    evFile = snakemake.input.event_files[ev]
+    #evFile = [evf for evf in snakemake.input.event_files if evf == 'trial-%s_onsets.txt'%evName]
     custom = [('custom%d'%evTemp,'"%s"'%evFile)]
     design.update(custom)
 
@@ -24,7 +25,7 @@ feat_files = [('feat_files(1)','"%s"'%snakemake.input.func_file)]
 design.update(feat_files)
 npts = [('npts','%d'%snakemake.params.bold_reps)]
 design.update(npts)
-tr = [('tr','%f'%snakemake.params.tr)]
+tr = [('tr','%f'%snakemake.params.TR)]
 design.update(tr)
 
 feat_output_dir = [('outputdir','"%s"'%feat_subdir)]

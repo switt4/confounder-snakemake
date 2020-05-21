@@ -27,6 +27,8 @@ rule create_fsl_design:
 		confound_name = '{confound_name}',
 		bold_reps = config['sequence_params']['bold_reps'],
 		TR = config['sequence_params']['TR']
+	conda:
+		'../envs/fslpy.yaml'
 	output:
 		design_fsf = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.fsf')
 	script: '../scripts/create_fsl_design.py'
@@ -44,4 +46,4 @@ rule estimate_fsl_design:
 		design_png = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.png'),
 		design_ppm = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.ppm'),
 		design_trg = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.trg')
-	shell:'feat_model {input}'
+	shell:'feat_model {input.design_fsf}'
