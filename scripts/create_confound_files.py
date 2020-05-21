@@ -18,8 +18,9 @@ logging.basicConfig(filename=snakemake.log.logfile,filemode='w',format='%(name)s
 
 logging.info('Test logging message')
 
+# Create empty confound_file for case of no experimental confounds
 if (snakemake.params.confound_name == 'noconfounds'):
-	confound_set_save = np.zeros()
+	open(snakemake.output.confound_file,'a').close()
 else:
 	# Read in confounds.tsv from fmriprep and confounds dictionary from config.yaml
 	confounds = read_tsv(snakemake.input.confounds_tsv)
