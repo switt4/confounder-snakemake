@@ -16,12 +16,7 @@ def box_plot(inArray,Labels,Title,Filename):
 	plt.savefig(Filename,format='svg')
 	plt.close()
 
-parser = argparse.ArgumentParser(description='Boxplot entrypoint script.')
-parser.add_argument('input_dictionary', help='Input dictionary to plot.')
-parser.add_argument('output_svgfile', help='Filename and path for output svg.')
-args = parser.parse_args()
-
-dict1 = read_json(args.input_dictionary)
+dict1 = read_json(snakemake.input.cosine_dictionary)
 
 labels, data = [*zip(*dict1.items())]
-box_plot(data,labels,'Cosine Similarity',args.output_svgfile)
+box_plot(data,labels,'Cosine Similarity',snakemake.output.cosine_plot_svg)
