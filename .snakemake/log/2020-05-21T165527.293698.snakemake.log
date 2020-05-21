@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	create_confound_file
+	1	create_fsl_design
+	2
+
+[Thu May 21 16:55:28 2020]
+rule create_confound_file:
+    input: /Users/switt/Documents/ComputationalCore/NoleControl/fmriprep_1.3.2/fmriprep/sub-CT02/func/sub-CT02_task-rest_run-01_desc-confounds_regressors.tsv, /Users/switt/Documents/ComputationalCore/NoleControl/confounder_output_snakemake/confounds_dictionary.json
+    output: /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/confounds-noconfounds.txt
+    jobid: 3
+    wildcards: task=rest, subject=CT02, confound_name=noconfounds, run=01
+
+/Users/switt/anaconda3/envs/snakemake-tutorial/bin/python3.6 /Users/switt/Documents/GitHub/confounder-snakemake/.snakemake/scripts/tmpxk3q4v6g.create_confound_files.py
+[Thu May 21 16:55:28 2020]
+Finished job 3.
+1 of 2 steps (50%) done
+
+[Thu May 21 16:55:28 2020]
+rule create_fsl_design:
+    input: /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3, /Users/switt/Documents/ComputationalCore/NoleControl/fmriprep_1.3.2/fmriprep/sub-CT02/func/sub-CT02_task-rest_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz, /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/trial-object_onsets.txt, /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/trial-button_onsets.txt, /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/confounds-noconfounds.txt
+    output: /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/design.fsf
+    jobid: 0
+    wildcards: task=rest, subject=CT02, confound_name=noconfounds, run=01
+
+[Thu May 21 16:55:28 2020]
+Error in rule create_fsl_design:
+    jobid: 0
+    output: /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/design.fsf
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/switt/Documents/GitHub/confounder-snakemake/.snakemake/log/2020-05-21T165527.293698.snakemake.log

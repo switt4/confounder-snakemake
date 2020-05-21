@@ -1,0 +1,62 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	create_confound_file
+	2	create_custom_events
+	1	create_fsl_design
+	4
+
+[Thu May 21 16:49:51 2020]
+rule create_confound_file:
+    input: /Users/switt/Documents/ComputationalCore/NoleControl/fmriprep_1.3.2/fmriprep/sub-CT02/func/sub-CT02_task-rest_run-01_desc-confounds_regressors.tsv, /Users/switt/Documents/ComputationalCore/NoleControl/confounder_output_snakemake/confounds_dictionary.json
+    output: /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/confounds-noconfounds.txt
+    jobid: 3
+    wildcards: task=rest, subject=CT02, confound_name=noconfounds, run=01
+
+/Users/switt/anaconda3/envs/snakemake-tutorial/bin/python3.6 /Users/switt/Documents/GitHub/confounder-snakemake/.snakemake/scripts/tmp6m2d62bm.create_confound_files.py
+[Thu May 21 16:49:51 2020]
+Finished job 3.
+1 of 4 steps (25%) done
+
+[Thu May 21 16:49:51 2020]
+rule create_custom_events:
+    input: /Users/switt/Documents/ComputationalCore/NoleControl/bids/sub-CT02/func/sub-CT02_task-rest_run-01_events.tsv
+    output: /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/trial-button_onsets.txt
+    jobid: 2
+    wildcards: task=rest, subject=CT02, confound_name=noconfounds, run=01, trial_name=button
+
+/Users/switt/anaconda3/envs/snakemake-tutorial/bin/python3.6 /Users/switt/Documents/GitHub/confounder-snakemake/.snakemake/scripts/tmpe3g8lqbr.custom_events_file.py
+[Thu May 21 16:49:52 2020]
+Finished job 2.
+2 of 4 steps (50%) done
+
+[Thu May 21 16:49:52 2020]
+rule create_custom_events:
+    input: /Users/switt/Documents/ComputationalCore/NoleControl/bids/sub-CT02/func/sub-CT02_task-rest_run-01_events.tsv
+    output: /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/trial-object_onsets.txt
+    jobid: 1
+    wildcards: task=rest, subject=CT02, confound_name=noconfounds, run=01, trial_name=object
+
+/Users/switt/anaconda3/envs/snakemake-tutorial/bin/python3.6 /Users/switt/Documents/GitHub/confounder-snakemake/.snakemake/scripts/tmpxu8wzzxo.custom_events_file.py
+[Thu May 21 16:49:52 2020]
+Finished job 1.
+3 of 4 steps (75%) done
+
+[Thu May 21 16:49:52 2020]
+rule create_fsl_design:
+    input: /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3, /Users/switt/Documents/ComputationalCore/NoleControl/fmriprep_1.3.2/fmriprep/sub-CT02/func/sub-CT02_task-rest_run-01_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz, /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/trial-object_onsets.txt, /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/trial-button_onsets.txt, /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/confounds-noconfounds.txt
+    output: /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/design.fsf
+    jobid: 0
+    wildcards: task=rest, subject=CT02, confound_name=noconfounds, run=01
+
+[Thu May 21 16:49:52 2020]
+Error in rule create_fsl_design:
+    jobid: 0
+    output: /Users/switt/Documents/ComputationalCore/NoleControl/FEAT3/task-rest/sub-CT02/confound-noconfounds/run-01/design.fsf
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/switt/Documents/GitHub/confounder-snakemake/.snakemake/log/2020-05-21T164950.483297.snakemake.log

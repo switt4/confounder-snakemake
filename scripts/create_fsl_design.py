@@ -64,9 +64,9 @@ if snakemake.params.confound_name == 'noconfounds':
 	    trial.append("set fmri({}) {}".format(key,value))
 	    trial = [sub.replace('set fmri(feat_files(1))','set feat_files(1)') for sub in trial]
 
-    with open(args.output_design_fsf, 'w') as f:
+    with open(snakemake.output.design_fsf, 'w') as f:
 	    for item in trial:
-	    f.write("%s\n" % item)
+	        f.write("%s\n" % item)
 else:
     confoundevs = [('confoundevs',1)]
     design.update(confoundevs)
@@ -78,6 +78,6 @@ else:
 	    trial.append("set fmri({}) {}".format(key,value))
 	    trial = [sub.replace('set fmri(feat_files(1))','set feat_files(1)') for sub in trial]
 
-    with open(args.output_design_fsf, 'w') as f:
+    with open(snakemake.output.design_fsf, 'w') as f:
 	    for item in trial:
-	    f.write("%s\n" % item)
+	        f.write("%s\n" % item)

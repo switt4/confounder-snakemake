@@ -1,0 +1,4 @@
+WildcardError in line 28 of /Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk:
+No values given for wildcard 'subject'.
+  File "/Users/switt/Documents/GitHub/confounder-snakemake/Snakefile", line 57, in <module>
+  File "/Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk", line 28, in <module>

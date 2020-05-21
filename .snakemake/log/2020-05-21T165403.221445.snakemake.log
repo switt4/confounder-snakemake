@@ -1,0 +1,3 @@
+SyntaxError in line 28 of /Users/switt/Documents/GitHub/confounder-snakemake/rules/fsl_design.smk:
+invalid syntax
+  File "/Users/switt/Documents/GitHub/confounder-snakemake/Snakefile", line 57, in <module>
