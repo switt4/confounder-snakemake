@@ -51,6 +51,6 @@ CONFOUNDS:
   framewiseDisplacement-csf-wm: ['framewise_displacement','csf','white_matter']
 
 
-# Specify a contrast vector.  Optional.  If not specified, the effects-of-interest F-contrast will be used.
-#CONTRAST: '1, -1, 0, 0'
+# Specify a contrast vector (e.g., '1, -1, 0, 0').  Optional.  If not specified, the effects-of-interest F-contrast will be used.
+CONTRAST: 
 

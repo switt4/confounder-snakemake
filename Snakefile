@@ -56,3 +56,4 @@ rule all:
 
 include: 'rules/fsl_design.smk'
 include: 'rules/fsl_glm.smk'
+include: 'rules/cosine_angle.smk'
