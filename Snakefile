@@ -3,6 +3,7 @@ import json
 from snakemake.utils import format
 from bids import BIDSLayout
 import pandas as pd
+import numpy as np
 
 configfile: "config.yaml"
 
@@ -36,8 +37,16 @@ layout = BIDSLayout(fmriprep_dir,validate=False)
 
 # get entities from cfg file to select input files from fmriprep
 fmriprep_params = config['fmriprep_params']
-sessions = layout.get_sessions(**fmriprep_params)
-runs = layout.get_runs(**fmriprep_params)
+sessions = layout.get_sessions()
+runs_list = layout.get_runs()
+
+# convert num_runs into list of strings matching "run-%02d" in BIDS filenames
+runs_list = np.array(runs_list)
+runs = []
+for r in range(len(runs_list)):
+    x = runs_list[r]
+    y = (np.array2string(x, formatter={'int':lambda x: "%02d" % x}))
+    runs.append(y)
 
 # get task parameters
 task = config['fmriprep_params']['task']
