@@ -33,7 +33,7 @@ task_params:
     trial_names: ['object','button']
 
 # Mask file for limiting search area (will throw error if mask file and func file are not in same space and spatial resolution)
-#MASK_FILE: "/path/to/mask_file.nii.gz"
+MASK_FILE:
 
 # Dictionary of confounds fron fMRIPrep confounds.tsv file.  Editable; keys are user-defined, values are column labels from confounds.tsv file.
 CONFOUNDS:

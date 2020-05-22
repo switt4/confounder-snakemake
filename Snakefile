@@ -52,6 +52,7 @@ else:
     subj_sess_prefix = 'sub-{subject}'
 
 rule all:
-    input: expand(join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.mat'),subject=subjects,confound_name=confound_names,run=runs,allow_missing=True)
+    input: expand(join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','stats.nii.gz'),task=task,subject=subjects,confound_name=confound_names,run=runs,allow_missing=True)
 
 include: 'rules/fsl_design.smk'
+include: 'rules/fsl_glm.smk'
