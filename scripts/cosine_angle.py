@@ -6,7 +6,6 @@ import numpy as np
 num_evs = len(snakemake.params.trial_names)
 contrast_vector = np.eye(len(num_evs))
 
-
 for file in range(len(sublist)):
 	if num_evs == 1:
 		peFile = load_img(sublist[file])
