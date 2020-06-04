@@ -77,7 +77,8 @@ else:
     trial = []
     for key,value in design.items():
 	    trial.append("set fmri({}) {}".format(key,value))
-	    trial = [sub.replace('set fmri(feat_files(1))','set feat_files(1)') for sub in trial]
+	trial = [sub.replace('set fmri(feat_files(1))','set feat_files(1)') for sub in trial]
+    trial = [sub.replace('set fmri(confoundev_files(1))','set confoundev_files(1)') for sub in trial]
 
     with open(snakemake.output.design_fsf, 'w') as f:
 	    for item in trial:

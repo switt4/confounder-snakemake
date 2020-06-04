@@ -16,7 +16,7 @@ def box_plot(inArray,Labels,Title,Filename):
 	plt.savefig(Filename,format='svg')
 	plt.close()
 
-dict1 = read_json(snakemake.input.cosine_dictionary)
+dict1 = read_json(snakemake.input.merged_cosine_dictionary)
 
 labels, data = [*zip(*dict1.items())]
 box_plot(data,labels,'Cosine Similarity',snakemake.output.cosine_plot_svg)
