@@ -36,9 +36,7 @@ rule estimate_fsl_design:
 	input:
 		design_fsf = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.fsf'),
 		design_dir = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}'),
-		confound_file = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','confounds-{confound_name}.txt')
-	params:
-		confound_name = '{confound_name}'
+        confound_file = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','confounds-{confound_name}.txt')
 	output:
 		design_cov_png = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design_cov.png'),
 		design_cov_ppm = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design_cov.ppm'),
@@ -49,4 +47,4 @@ rule estimate_fsl_design:
 		design_png = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.png'),
 		design_ppm = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.ppm'),
 		design_trg = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.trg')
-	script: '../scripts/run_feat_model.py'
+	shell:'feat_model {input.design_dir}/design {input.confound_file}'

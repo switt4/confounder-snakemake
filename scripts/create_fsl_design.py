@@ -1,5 +1,12 @@
 import os
 import fsl.data.featanalysis as FA
+import fsl.utils.run as RUN
+
+# get number of time points using fslinfo (in case of non-uniform runs)
+info = RUN.runfsl('fslinfo',snakemake.input.func_file)
+info_temp = info.split()
+info_dct = {info_temp[i]: info_temp[i+1] for i in range(0,len(info_temp),2)}
+num_pts = int(info_dct['dim4'])
 
 # get full path to $FSLDIR
 FSLDIR = os.path.expandvars('$FSLDIR')
@@ -23,7 +30,7 @@ for ev in range(len(snakemake.input.event_files)):
 # begin tedious process of rebuilding design.fsf 
 feat_files = [('feat_files(1)','"%s"'%snakemake.input.func_file)]
 design.update(feat_files)
-npts = [('npts','%d'%snakemake.params.bold_reps)]
+npts = [('npts','%d'%num_pts)]
 design.update(npts)
 tr = [('tr','%f'%snakemake.params.TR)]
 design.update(tr)
@@ -77,7 +84,8 @@ else:
     trial = []
     for key,value in design.items():
 	    trial.append("set fmri({}) {}".format(key,value))
-	trial = [sub.replace('set fmri(feat_files(1))','set feat_files(1)') for sub in trial]
+    
+    trial = [sub.replace('set fmri(feat_files(1))','set feat_files(1)') for sub in trial]
     trial = [sub.replace('set fmri(confoundev_files(1))','set confoundev_files(1)') for sub in trial]
 
     with open(snakemake.output.design_fsf, 'w') as f:

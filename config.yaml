@@ -25,7 +25,6 @@ fmriprep_params:
 # Fixed parameters of bold scans
 sequence_params:
     TR: 2.5
-    bold_reps: 84
 
 # Fixed task parameters
 # Enter trial_names in order in which they appear in example design.fsf in FEAT_DIR
