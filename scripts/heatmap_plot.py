@@ -38,7 +38,8 @@ bold_signal = np.loadtxt(snakemake.input.bold_signal_file)
 
 bold_confound_correlation = []
 
-for bold in range(np.shape(bold_signal)[1]):
+#for bold in range(np.shape(bold_signal)[1]):
+for bold in len(snakemake.params.trial_names):
     for conf in range(len(flat_names_unique)):
         corr_temp = np.correlate(bold_signal[:,bold],np.nan_to_num(np.array(confounds[flat_names_unique[conf]])))
         bold_confound_correlation.append(corr_temp)
