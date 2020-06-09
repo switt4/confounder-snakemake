@@ -1,35 +1,40 @@
 
 # BIDS directory containing events.tsv files
-BIDS_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/bids"
+#BIDS_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/bids"
+BIDS_DIR: "/Users/switt/Documents/ComputationalCore/CABSOE/bids"
 
 # Directory containing example design.fsf file
-FEAT_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/FEAT3"
+#FEAT_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/FEAT3"
+FEAT_DIR: "/Users/switt/Documents/ComputationalCore/CABSOE/feat"
 
 # Directory containing output fmriprep directory
-FMRIPREP_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/fmriprep_1.3.2"
+#FMRIPREP_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/fmriprep_1.3.2"
+FMRIPREP_DIR: "/Users/switt/Documents/ComputationalCore/CABSOE/fmriprep_1.5.4"
 
 # Directory for confounder output report and figures
-CONFOUNDER_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output_snakemake"
+#CONFOUNDER_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output_snakemake"
+CONFOUNDER_DIR: "/Users/switt/Documents/ComputationalCore/CABSOE/confounder_output"
 
 # Location of participants.tsv file
-participants_tsv: "/Users/switt/Documents/ComputationalCore/NoleControl/bids/participants.tsv"
+#participants_tsv: "/Users/switt/Documents/ComputationalCore/NoleControl/bids/participants.tsv"
+participants_tsv: "/Users/switt/Documents/ComputationalCore/CABSOE/bids/participants.tsv"
 
 # Parameters for grabbing correct files from FMRIPREP_DIR
 fmriprep_params:
     datatype: bold
     space: MNI152NLin2009cAsym
     desc: preproc
-    task: rest
-    num_runs: 5
+    task: rememberknow
+    num_runs: 2
 
 # Fixed parameters of bold scans
 sequence_params:
-    TR: 2.5
+    TR: 2
 
 # Fixed task parameters
 # Enter trial_names in order in which they appear in example design.fsf in FEAT_DIR
 task_params:
-    trial_names: ['object','button']
+    trial_names: ['Encode','Retrieve']
 
 # Mask file for limiting search area (will throw error if mask file and func file are not in same space and spatial resolution)
 MASK_FILE:
