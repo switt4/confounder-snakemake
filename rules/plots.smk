@@ -1,15 +1,22 @@
 rule concatenate_jsons:
 	input: 
-		cosine_dictionaries = lambda wildcards: expand(join(confounder_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}',f'{subj_sess_prefix}_cosine.json'),confound_name=confound_names,**wildcards)
+		cosine_dictionaries = lambda wildcards: expand(join(confounder_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','cosine.json'),confound_name=confound_names,**wildcards)
 	output:
 		merged_cosine_dictionary = join(confounder_dir,'task-{task}',f'{subj_sess_prefix}_cosine.json')
-	script: '../scripts/concatenate_jsons.py'
+	script: '../scripts/merge_dictionaries.py'
+
+rule concatenate_mean_jsons:
+	input: 
+		mean_cosine_dictionaries = lambda wildcards: expand(join(confounder_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','mean_cosine.json'),confound_name=confound_names,**wildcards)
+	output:
+		merged_cosine_dictionary = join(confounder_dir,'task-{task}',f'{subj_sess_prefix}_mean_cosine.json')
+	script: '../scripts/merge_dictionaries.py'
 
 rule plot_cosine:
 	input:
 		merged_cosine_dictionary = join(confounder_dir,'task-{task}',f'{subj_sess_prefix}_cosine.json')
 	output:
-		cosine_plot_svg = join(confounder_dir,subj_sess_dir,'figures','task-{task}',f'{subj_sess_prefix}_cosine.svg')
+		cosine_plot_svg = join(confounder_dir,'figures','task-{task}',f'{subj_sess_prefix}_cosine.svg')
 	script: '../scripts/boxplot.py'
 
 rule plot_correlation:
@@ -20,5 +27,5 @@ rule plot_correlation:
 	params:
 		trial_names = config['task_params']['trial_names']
 	output:
-		correlation_plot_svg = join(confounder_dir,'figures',subj_sess_dir,'task-{task}',f'{subj_sess_prefix}_run-{{run}}_correlation.svg')
+		correlation_plot_svg = join(confounder_dir,'figures','task-{task}',f'{subj_sess_prefix}_run-{{run}}_correlation.svg')
 	script: '../scripts/heatmap_plot.py' 

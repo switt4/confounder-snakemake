@@ -38,7 +38,9 @@ layout = BIDSLayout(fmriprep_dir,validate=False)
 # get entities from cfg file to select input files from fmriprep
 fmriprep_params = config['fmriprep_params']
 sessions = layout.get_sessions()
-runs_list = layout.get_runs()
+#runs_list = layout.get_runs()
+runs_list = config['fmriprep_params']['num_runs']
+runs_list = np.arange(runs_list)+1
 
 # convert num_runs into list of strings matching "run-%02d" in BIDS filenames
 runs_list = np.array(runs_list)

@@ -36,7 +36,8 @@ sequence_params:
 task_params:
     trial_names: ['Encode','Retrieve']
 
-# Mask file for limiting search area (will throw error if mask file and func file are not in same space and spatial resolution)
+# Mask file for limiting search area (will throw error if mask file and func file are not in same space and spatial resolution).
+# Optional.  If not specified, the "func/*_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz" file will be used.
 MASK_FILE:
 
 # Dictionary of confounds fron fMRIPrep confounds.tsv file.  Editable; keys are user-defined, values are column labels from confounds.tsv file.
@@ -56,5 +57,5 @@ CONFOUNDS:
 
 
 # Specify a contrast vector (e.g., '1, -1, 0, 0').  Optional.  If not specified, the effects-of-interest F-contrast will be used.
-CONTRAST: 
+CONTRAST:
 
