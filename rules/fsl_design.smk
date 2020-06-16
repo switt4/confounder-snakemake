@@ -35,7 +35,7 @@ rule create_fsl_design:
 rule estimate_fsl_design:
 	input:
 		design_fsf = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','design.fsf'),
-		design_dir = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}'),
+		#design_dir = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}'),
 		confound_file = join(feat_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','run-{run}','confounds-{confound_name}.txt')
 	params:
 		confound_name = '{confound_name}'

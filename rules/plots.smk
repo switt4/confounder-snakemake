@@ -7,7 +7,7 @@ rule concatenate_jsons:
 
 rule concatenate_mean_jsons:
 	input: 
-		mean_cosine_dictionaries = lambda wildcards: expand(join(confounder_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','mean_cosine.json'),confound_name=confound_names,**wildcards)
+		cosine_dictionaries = lambda wildcards: expand(join(confounder_dir,'task-{task}',subj_sess_dir,'confound-{confound_name}','mean_cosine.json'),confound_name=confound_names,**wildcards)
 	output:
 		merged_cosine_dictionary = join(confounder_dir,'task-{task}',f'{subj_sess_prefix}_mean_cosine.json')
 	script: '../scripts/merge_dictionaries.py'

@@ -63,7 +63,11 @@ else:
     subj_sess_prefix = 'sub-{subject}'
 
 rule all:
-    input: expand(join(confounder_dir,'task-{task}',f'{subj_sess_prefix}_cosine.json'),task=task,subject=subjects,session=sessions,allow_missing=True)
+    input:
+        expand(join(confounder_dir,'figures','task-{task}',f'{subj_sess_prefix}_cosine.svg'),task=task,subject=subjects,session=sessions,allow_missing=True), 
+        expand(join(confounder_dir,'task-{task}',f'{subj_sess_prefix}_cosine.json'),task=task,subject=subjects,session=sessions,allow_missing=True),
+        expand(join(confounder_dir,'figures','task-{task}',f'{subj_sess_prefix}_run-{{run}}_correlation.svg'),task=task,subject=subjects,session=sessions,run=runs,allow_missing=True),
+        expand(join(confounder_dir,'task-{task}',f'{subj_sess_prefix}_mean_cosine.json'),task=task,subject=subjects,session=sessions,allow_missing=True)
         
 include: 'rules/fsl_design.smk'
 include: 'rules/fsl_glm.smk'

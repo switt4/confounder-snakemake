@@ -16,10 +16,11 @@ def run(command, env={}):
 	if process.returncode != 0:
 		raise Exception("Non zero return code: %d"%process.returncode)
 
-    
+design_dir = os.path.dirname(snakemake.input.design_fsf)
+
 if snakemake.params.confound_name == 'noconfounds':
-    command = 'feat_model %s/design'%snakemake.input.design_dir
+    command = 'feat_model %s/design'%design_dir
     run(command)
 else:
-    command = 'feat_model %s/design %s'%(snakemake.input.design_dir,snakemake.input.confound_file)
+    command = 'feat_model %s/design %s'%(design_dir,snakemake.input.confound_file)
     run(command)
