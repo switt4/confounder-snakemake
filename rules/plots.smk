@@ -16,7 +16,8 @@ rule plot_cosine:
 	input:
 		merged_cosine_dictionary = join(confounder_dir,'task-{task}',f'{subj_sess_prefix}_cosine.json')
 	output:
-		cosine_plot_svg = join(confounder_dir,'figures','task-{task}',f'{subj_sess_prefix}_cosine.svg')
+		#cosine_plot_svg = join(confounder_dir,'figures','task-{task}',f'{subj_sess_prefix}_cosine.svg')
+		report(join(confounder_dir,'figures','task-{task}',f'{subj_sess_prefix}_cosine.svg'))
 	script: '../scripts/boxplot.py'
 
 rule plot_correlation:
@@ -27,5 +28,6 @@ rule plot_correlation:
 	params:
 		trial_names = config['task_params']['trial_names']
 	output:
-		correlation_plot_svg = join(confounder_dir,'figures','task-{task}',f'{subj_sess_prefix}_run-{{run}}_correlation.svg')
+		#correlation_plot_svg = join(confounder_dir,'figures','task-{task}',f'{subj_sess_prefix}_run-{{run}}_correlation.svg')
+		report(join(confounder_dir,'figures','task-{task}',f'{subj_sess_prefix}_run-{{run}}_correlation.svg'))
 	script: '../scripts/heatmap_plot.py' 

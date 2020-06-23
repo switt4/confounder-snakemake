@@ -19,4 +19,4 @@ def box_plot(inArray,Labels,Title,Filename):
 dict1 = read_json(snakemake.input.merged_cosine_dictionary)
 
 labels, data = [*zip(*dict1.items())]
-box_plot(data,labels,'Cosine Similarity',snakemake.output.cosine_plot_svg)
+box_plot(data,labels,'Cosine Similarity',snakemake.output[0])

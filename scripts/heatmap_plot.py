@@ -23,6 +23,7 @@ def heatmap_plot(inArray,XLabels,YLabels,Title,Filename):
 	ax.set_yticklabels(YLabels)
 	cbar = ax.figure.colorbar(im, ax=ax, orientation='horizontal', pad=0.35)
 	cbar.ax.set_xlabel('correlation')
+	cbar.set_clim(vmin=-0.3, vmax=0.3)
 	plt.tight_layout()
 	plt.savefig(Filename,format='svg')
 	plt.close()
@@ -41,10 +42,10 @@ bold_confound_correlation = []
 
 for bold in range(len(snakemake.params.trial_names)):
     for conf in range(len(flat_names_unique)):
-        corr_temp = np.correlate(bold_signal[:,bold],np.nan_to_num(np.array(confounds[flat_names_unique[conf]])))
-        bold_confound_correlation.append(corr_temp)
+        corr_temp = np.corrcoef(bold_signal[:,bold],np.nan_to_num(np.array(confounds[flat_names_unique[conf]])))
+        bold_confound_correlation.append(corr_temp[0,1])
 
 bold_confound_correlation = np.array(bold_confound_correlation)
 bold_confound_correlation = np.reshape(bold_confound_correlation,(len(snakemake.params.trial_names),len(flat_names_unique)))
 
-heatmap_plot(bold_confound_correlation,flat_names_unique,snakemake.params.trial_names,'Correlation between Bold Signal and Confounds',snakemake.output.correlation_plot_svg)
+heatmap_plot(bold_confound_correlation,flat_names_unique,snakemake.params.trial_names,'Correlation between Bold Signal and Confounds',snakemake.output[0])
