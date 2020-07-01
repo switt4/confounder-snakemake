@@ -12,6 +12,10 @@ Prerequisites:
 - conda
 - FSL (WIP: suppport for FSL in a container)
 
+Notes:
+- App only works for one task at a time.
+- All subjects must have the same number of runs of the task.  (Length of individual runs can be variable.)
+
 ## Authors
 * Suzanne T. Witt @switt4
 
