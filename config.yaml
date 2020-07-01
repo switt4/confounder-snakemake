@@ -1,30 +1,25 @@
 
 # BIDS directory containing events.tsv files
-#BIDS_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/bids"
-BIDS_DIR: "/Users/switt/Documents/ComputationalCore/CABSOE/bids"
+BIDS_DIR: "/path/to/bids/dir"
 
 # Directory containing example design.fsf file
-#FEAT_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/FEAT3"
-FEAT_DIR: "/Users/switt/Documents/ComputationalCore/CABSOE/feat"
+FEAT_DIR: "/path/to/feat/dir"
 
 # Directory containing output fmriprep directory
-#FMRIPREP_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/fmriprep_1.3.2"
-FMRIPREP_DIR: "/Users/switt/Documents/ComputationalCore/CABSOE/fmriprep_1.5.4"
+FMRIPREP_DIR: "/path/to/fmriprep/dir"
 
 # Directory for confounder output report and figures
-#CONFOUNDER_DIR: "/Users/switt/Documents/ComputationalCore/NoleControl/confounder_output_snakemake"
-CONFOUNDER_DIR: "/Users/switt/Documents/ComputationalCore/CABSOE/confounder_output"
+CONFOUNDER_DIR: "/path/to/output/dir"
 
 # Location of participants.tsv file
-#participants_tsv: "/Users/switt/Documents/ComputationalCore/NoleControl/bids/participants.tsv"
-participants_tsv: "/Users/switt/Documents/ComputationalCore/CABSOE/bids/participants.tsv"
+participants_tsv: "/path/to/participants.tsv"
 
 # Parameters for grabbing correct files from FMRIPREP_DIR
 fmriprep_params:
     datatype: bold
     space: MNI152NLin2009cAsym
     desc: preproc
-    task: rememberknow
+    task: taskname
     num_runs: 2
 
 # Fixed parameters of bold scans
@@ -34,7 +29,7 @@ sequence_params:
 # Fixed task parameters
 # Enter trial_names in order in which they appear in example design.fsf in FEAT_DIR
 task_params:
-    trial_names: ['Encode','Retrieve']
+    trial_names: ['trial1','trial2']
 
 # Mask file for limiting search area (will throw error if mask file and func file are not in same space and spatial resolution).
 # Optional.  If not specified, the "func/*_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz" file will be used.
