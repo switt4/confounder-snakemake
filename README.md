@@ -57,11 +57,16 @@ See the [Snakemake documentation](https://snakemake.readthedocs.io/en/stable/exe
 After successful execution, you can create a self-contained interactive HTML report with all results via:
 
     snakemake --report report.html
+    
+Users may find that they need to install two conda packages (`pygraphviz` and `imagemagick`) in order to have the html reports formateed correctly.
 
-This report can, e.g., be forwarded to your collaborators.
+    conda install pygraphviz
+    conda install -c conda-forge imagemagick
+
+This report can be forwarded to your collaborators.  N.B. All images are embedded in the report, so this file can become large when running large numbers of subjects/runs.
 An example can be seen [here](https://github.com/switt4/confounder-snakemake/blob/master/report.html).
 
-Remember to exit the snakemake environment when finished by typing, `conda deactivate`.
+To exit the snakemake environment when finished type: `conda deactivate`.
 
 
 
