@@ -64,6 +64,7 @@ Users may find that they need to install two conda packages (`pygraphviz` and `i
     conda install -c conda-forge imagemagick
 
 This report can be forwarded to your collaborators.  N.B. All images are embedded in the report, so this file can become large when running large numbers of subjects/runs.
+
 An example can be seen [here](https://github.com/switt4/confounder-snakemake/blob/master/report.html).
 
 To exit the snakemake environment when finished type: `conda deactivate`.
