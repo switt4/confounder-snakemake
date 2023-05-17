@@ -20,5 +20,3 @@ dict1 = read_json(snakemake.input.merged_cosine_dictionary)
 
 labels, data = [*zip(*dict1.items())]
 box_plot(data,labels,'Cosine Similarity',snakemake.output[0])
-
-#test vscode gh authentication
